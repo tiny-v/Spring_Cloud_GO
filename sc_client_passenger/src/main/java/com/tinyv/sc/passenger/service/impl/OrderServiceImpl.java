@@ -1,18 +1,16 @@
 package com.tinyv.sc.passenger.service.impl;
-import	java.awt.Desktop.Action;
-
+import com.alibaba.fastjson.JSON;
 import com.tinyv.sc.passenger.domain.Driver;
 import com.tinyv.sc.passenger.domain.Order;
 import com.tinyv.sc.passenger.domain.Passenger;
 import com.tinyv.sc.passenger.global.Constants;
 import com.tinyv.sc.passenger.service.OrderService;
-import com.tinyv.sc.passenger.service.RocketMQService;
 import com.tinyv.sc.passenger.utils.DateTimeUtil;
 import com.tinyv.sc.passenger.utils.LocationUtils;
 import com.tinyv.sc.passenger.utils.UUIDUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
-
 import java.util.Date;
 
 /**
@@ -22,8 +20,9 @@ import java.util.Date;
 @Service
 public class OrderServiceImpl implements OrderService {
 
+
     @Autowired
-    private RocketMQService rocketMQService;
+    private RedisTemplate redisTemplate;
 
     @Override
     public void sendOrder(Passenger passenger) {
@@ -40,8 +39,9 @@ public class OrderServiceImpl implements OrderService {
         order.setStatus(Constants.ORDER_STATUS.SENDING.name());
         //
         order.setCreateTime(DateTimeUtil.getCurrentTime(new Date(), "yyyy-MM-dd HH:mm:ss"));
-        // todo 将订单存入队列中
-        rocketMQService.produceOrder(order);
+
+        //redisTemplate.opsForValue().set(order.getOrderId()+"_"+i,  JSON.toJSONString(order));
+        redisTemplate.convertAndSend("Order", JSON.toJSONString(order));
     }
 
     @Override
