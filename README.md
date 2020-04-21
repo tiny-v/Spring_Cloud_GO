@@ -6,6 +6,12 @@
 > 2. SpringCloud - Hoxton.RELEASE
 > 3. JDK1.8
 
+## 工具
+>  Eureka -- 服务治理与发现
+>
+>
+> Redis -- 发布订阅和缓存
+
 ## 模块
 #### 服务端(sc_server)
 
