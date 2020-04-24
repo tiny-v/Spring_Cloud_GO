@@ -1,8 +1,8 @@
-package com.tinyv.sc.passenger.utils;
+package com.tiny.sc.core.utils;
 
-import com.tinyv.sc.passenger.domain.Location;
-import com.tinyv.sc.passenger.domain.Point;
-
+import com.tiny.sc.core.domain.Location;
+import com.tiny.sc.core.domain.Point;
+import java.util.Random;
 
 /**
  * @author mayue
@@ -14,7 +14,8 @@ public class LocationUtils {
      * @return 返回 [0,10000] 之间的正整数
      */
     private static int getRandomInt(){
-        return (int)(Math.random()*10000);
+        Random r = new Random();
+        return r.nextInt(10000);
     }
 
     /**
@@ -27,12 +28,14 @@ public class LocationUtils {
         point.setPoint_X(getRandomInt());
         point.setPoint_Y(getRandomInt());
         location.setPoint(point);
+        location.setRegion_X(point.getPoint_X()/100);
+        location.setRegion_Y(point.getPoint_Y()/100);
         return location;
     }
 
     public static void main(String[] args){
-        for(int i=0; i<10; i++){
-            System.out.println();
+        for(int i=0; i<100; i++){
+            System.out.println(getRandomInt());
         }
     }
 

@@ -1,8 +1,7 @@
 package com.tinyv.sc.passenger.service;
 
-import com.tinyv.sc.passenger.domain.Driver;
-import com.tinyv.sc.passenger.domain.Order;
-import com.tinyv.sc.passenger.domain.Passenger;
+
+import com.tiny.sc.core.domain.Passenger;
 
 /**
  * 订单接口
@@ -25,20 +24,6 @@ public interface OrderService {
     void cancelOrder(Passenger passenger, String orderId);
 
 
-    /**
-     * 抢单
-     * @param orderId
-     * @return 是否抢到订单
-     */
-    boolean receiveOrder(Driver driver, String orderId);
-
-
-    /**
-     * 处理订单
-     * @param orderId
-     * @return
-     */
-    boolean processOrder(Driver driver, String orderId);
 
 
 

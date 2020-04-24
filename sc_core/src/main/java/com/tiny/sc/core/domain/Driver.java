@@ -1,6 +1,7 @@
-package com.tinyv.sc.passenger.domain;
-import lombok.NoArgsConstructor;
+package com.tiny.sc.core.domain;
+
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 /**
  * @author mayue
@@ -10,10 +11,14 @@ import lombok.Data;
 @Data
 public class Driver {
 
-    private int driverId;
+    private String driverId;
+    /** 司机名称 */
+    private String name;
     /** 司机当前位置 */
     private Location location;
     /** 状态 */
     private String status;
+
+    private Order grabOrder;
 
 }

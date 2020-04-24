@@ -1,9 +1,9 @@
 package com.tinyv.sc.passenger.service;
 
+import com.tiny.sc.core.domain.Passenger;
+import com.tiny.sc.core.utils.LocationUtils;
 import com.tinyv.sc.passenger.PassengerApplication;
-import com.tinyv.sc.passenger.domain.Passenger;
 import com.tinyv.sc.passenger.service.impl.OrderServiceImpl;
-import com.tinyv.sc.passenger.utils.LocationUtils;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;

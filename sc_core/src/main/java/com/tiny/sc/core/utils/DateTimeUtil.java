@@ -1,4 +1,4 @@
-package com.tinyv.sc.passenger.utils;
+package com.tiny.sc.core.utils;
 
 
 import java.text.ParseException;

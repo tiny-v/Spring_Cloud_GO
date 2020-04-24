@@ -1,4 +1,4 @@
-package com.tinyv.sc.passenger.domain;
+package com.tiny.sc.core.domain;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;

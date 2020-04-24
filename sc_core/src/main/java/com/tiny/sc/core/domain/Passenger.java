@@ -1,6 +1,8 @@
-package com.tinyv.sc.passenger.domain;
-import lombok.NoArgsConstructor;
+package com.tiny.sc.core.domain;
+
 import lombok.Data;
+import lombok.NoArgsConstructor;
+
 /**
  * @author mayue
  * @date 2020/04/20
@@ -9,7 +11,7 @@ import lombok.Data;
 @Data
 public class Passenger {
 
-    private int passengerId;
+    private String passengerId;
 
     private int telephone;
 

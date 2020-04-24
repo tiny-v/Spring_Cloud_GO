@@ -1,4 +1,4 @@
-package com.tinyv.sc.passenger.domain;
+package com.tiny.sc.core.domain;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -14,6 +14,10 @@ public class Location {
     private String address;
     /** 坐标 */
     private Point point;
+    /** 区域 */
+    private int region_X;
+
+    private int region_Y;
 
 }
 
