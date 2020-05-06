@@ -1,5 +1,6 @@
 package com.tiny.sc.core.utils;
 
+import com.tiny.sc.core.domain.Constants;
 import com.tiny.sc.core.domain.Location;
 import com.tiny.sc.core.domain.Point;
 import java.util.Random;
@@ -10,12 +11,18 @@ import java.util.Random;
  */
 public class LocationUtils {
 
-    /**
-     * @return 返回 [0,10000] 之间的正整数
-     */
-    private static int getRandomInt(){
+    private static int getRandomX(){
         Random r = new Random();
-        return r.nextInt(10000);
+        return r.nextInt(Constants.MAP_X);
+    }
+
+    private static int getRandomY(){
+        Random r = new Random();
+        return r.nextInt(Constants.MAP_Y);
+    }
+
+    private static String getCurrentRegion(Point point){
+        return "R_" + point.getPoint_X()/Constants.MAP_REGION_GAP + "_" + point.getPoint_Y()/Constants.MAP_REGION_GAP;
     }
 
     /**
@@ -24,19 +31,12 @@ public class LocationUtils {
      */
     public static Location getRanDomLocation(){
         Location location = new Location();
-        Point point = new Point();
-        point.setPoint_X(getRandomInt());
-        point.setPoint_Y(getRandomInt());
+        Point point = new Point(getRandomX(), getRandomY());
         location.setPoint(point);
         location.setRegion_X(point.getPoint_X()/100);
         location.setRegion_Y(point.getPoint_Y()/100);
+        location.setRegion(getCurrentRegion(point));
         return location;
-    }
-
-    public static void main(String[] args){
-        for(int i=0; i<100; i++){
-            System.out.println(getRandomInt());
-        }
     }
 
 }

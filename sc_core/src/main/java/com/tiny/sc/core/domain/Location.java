@@ -19,6 +19,8 @@ public class Location {
 
     private int region_Y;
 
+    private String region;
+
 }
 
 

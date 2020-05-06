@@ -13,8 +13,10 @@ public class Order {
 
     /**订单ID*/
     private String orderId;
-    /**乘客电话号码*/
-    private int phoneNumber;
+    /**乘客ID--电话号码*/
+    private String passengerId;
+    /**司机ID--电话号码**/
+    private String driverId;
     /**出发地址*/
     private Location startPoint;
     /**目的地*/

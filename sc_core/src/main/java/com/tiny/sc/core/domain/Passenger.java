@@ -13,7 +13,7 @@ public class Passenger {
 
     private String passengerId;
 
-    private int telephone;
+    private String passengerName;
 
     private Location location;
 

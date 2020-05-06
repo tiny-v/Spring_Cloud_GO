@@ -10,9 +10,9 @@
     <version>1.0-SNAPSHOT</version>
 
     <modules>
-        <module>sc_server</module>
-        <module>sc_client_passenger</module>
-        <module>sc_client_driver</module>
+        <module>eureka-service</module>
+        <module>passenger-service</module>
+        <module>driver-service</module>
         <module>sc_core</module>
     </modules>
 
